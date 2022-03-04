@@ -69,6 +69,9 @@ ${data.contributing}
 ${data.tests}
     
 ## [License](#table-of-contents)
+
+The application is cover under the following license:
+
 ${data.license}
 
 
