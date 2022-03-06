@@ -1,7 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-    if (license !== 'open') {
+    if (license !== 'Open') {
     return `
   ![badge](https://img.shields.io/badge/license-${license}-red)
     `;
@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license !== 'open') {
+  if (license !== 'Open') {
   return `
   [${license}](https://choosealicense.com/licenses/${license})
     `;
@@ -23,11 +23,12 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-  if (license !== 'open') {
+function renderLicenseSection(license) {
+  if (license !== 'Open') {
     return `
     ## [License](#table-of-contents)
     - [License](#license)
+    The application is cover under the following license:
     ![badge](https://img.shields.io/badge/license-Open-red)
   
     ${renderLicenseLink(license)}
@@ -39,16 +40,21 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  let tocLicense = ""
+  if (data.license !== 'Open')
+  tocLicense =   '- [License](#license)'
 return `
 # ${data.title}
 
   ${renderLicenseBadge(data.license)}
 
+
+
 ## Table of Content
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [License](#license)
+  ${tocLicense}
   - [Contributing](#contributing)
   - [Tests](#tests)
   - [Questions](#questions)
@@ -68,11 +74,7 @@ ${data.contributing}
 ## [Tests](#table-of-contents)
 ${data.tests}
     
-## [License](#table-of-contents)
-
-The application is cover under the following license:
-
-${data.license}
+${renderLicenseSection(data.license)}
 
 
 ## [Questions](#table-of-contents)

@@ -52,12 +52,12 @@ const questions = [
     }, {
         type: 'input',
         name: 'username',
-        message: 'Please enter your GitHub username:',
+        message: 'Please enter your GitHub username: (Required',
         validate: githubInput => {
             if (githubInput) {
                 return true;
             } else {
-                console.log('Please enter your Github username: (Required)');
+                console.log('Please enter your Github username:)');
                 return false;
             }
         }
