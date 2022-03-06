@@ -26,10 +26,9 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license !== 'Open') {
     return `
-    ## [License](#table-of-contents)
-    - [License](#license)
-    The application is cover under the following license:
-    ![badge](https://img.shields.io/badge/license-Open-red)
+## [License](#table-of-contents)
+
+The application is cover under the following license:
   
     ${renderLicenseLink(license)}
       `;
